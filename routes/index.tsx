@@ -1,14 +1,10 @@
 import { Route, Routes } from "react-router-dom"
-
-import LazyDemo from "~views/demo"
-
-import { About } from "./about"
 import { Home } from "./home"
+import Login from "./login"
 
 export const Routing = () => (
   <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/about" element={<About />} />
-    <Route path="/lazy" element={<LazyDemo />} />
+    <Route path="/login" element={<Login />} />
   </Routes>
 )

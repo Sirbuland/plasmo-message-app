@@ -6,7 +6,7 @@ export const Home = () => {
   return (
     <div style={{ padding: 16 }}>
       <span>Home page</span>
-      <button onClick={() => navigation("/about")}>About</button>
+      <button onClick={() => navigation("/login")}>Login</button>
       <button onClick={() => navigation("/lazy")}>Lazy</button>
     </div>
   )
