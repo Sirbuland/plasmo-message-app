@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@plasmohq/storage':
+    specifier: ^1.9.1
+    version: 1.9.1(react@18.2.0)
   plasmo:
     specifier: 0.84.2
     version: 0.84.2(react-dom@18.2.0)(react@18.2.0)
@@ -17,6 +20,9 @@ dependencies:
   react-router-dom:
     specifier: 6.21.3
     version: 6.21.3(react-dom@18.2.0)(react@18.2.0)
+  secure:
+    specifier: link:@plasmohq/storage/secure
+    version: link:@plasmohq/storage/secure
 
 devDependencies:
   '@ianvs/prettier-plugin-sort-imports':
@@ -2202,6 +2208,18 @@ packages:
       - velocityjs
       - walrus
       - whiskers
+    dev: false
+
+  /@plasmohq/storage@1.9.1(react@18.2.0):
+    resolution: {integrity: sha512-65UXCZEWUA0aHhho2Mu5igrP/zdxkvPsT5N3rIypOYh0prn6Xk5HD0dt7q0mo8hb16QUUWDUL7OUPH4IDeDsIg==}
+    peerDependencies:
+      react: ^16.8.6 || ^17 || ^18
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      pify: 6.1.0
+      react: 18.2.0
     dev: false
 
   /@pnpm/config.env-replace@1.1.0:
@@ -4681,6 +4699,11 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /pify@6.1.0:
+    resolution: {integrity: sha512-KocF8ve28eFjjuBKKGvzOBGzG8ew2OqOOSxTTZhirkzH7h3BI1vyzqlR0qbfcDBve1Yzo3FVlWUAtCRrbVN8Fw==}
+    engines: {node: '>=14.16'}
+    dev: false
 
   /pirates@4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}

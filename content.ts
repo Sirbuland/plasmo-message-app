@@ -1,26 +1,29 @@
 import type { PlasmoCSConfig } from "plasmo"
-import { getDatabase } from "~src/helpers/indexedDb";
 
 export const config: PlasmoCSConfig = {
   matches: ["https://www.plasmo.com/*", "https://docs.plasmo.com/*"]
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('testing here')
- 
-});
-
-window.onload = () => {
+window.onload = async () => {
   const paragraphs = document.querySelectorAll('p');
 
   const paragraphsArray = Array.from(paragraphs);
 
-
-  paragraphsArray.forEach((paragraph, index) => {
-    console.log(`Paragraph ${index + 1}: ${paragraph.textContent}`);
-  });
-
-  const db = getDatabase()
-
-  
+  try {
+    for (const paragraph of paragraphsArray) {
+      console.log(`Paragraph: ${paragraph.textContent}`);
+    };  
+    chrome.storage.local.set({ contentScrapped: paragraphsArray.map(p => p.textContent) });
+  } catch(error) {
+    console.log('Error while scrapping content', error)
+  }
 }
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.dataFromExtension) {
+    const receivedData = message.dataFromExtension;
+    console.log('Data received from extension:', receivedData);
+
+    alert('This message has been generated from content.')
+  }
+});

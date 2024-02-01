@@ -1,22 +1,11 @@
-import { lazy, Suspense } from "react"
+import type React from "react"
 import { Route, Routes } from "react-router-dom"
-
-import { About } from "./about"
 import { Home } from "./home"
+import Login from "./login"
 
-const LazyDemo = lazy(() => import("~views/demo"))
-
-export const Routing = () => (
+export const Routing: React.FC = () => (
   <Routes>
     <Route path="/" element={<Home />} />
-    <Route path="/about" element={<About />} />
-    <Route
-      path="/lazy"
-      element={
-        <Suspense>
-          <LazyDemo />
-        </Suspense>
-      }
-    />
+    <Route path="/login" element={<Login />} />
   </Routes>
 )
