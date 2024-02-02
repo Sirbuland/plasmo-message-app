@@ -39,7 +39,7 @@ export const Home = () => {
       {isLoading ? (
         <div className="loading">Loading....</div>
       ) : (
-        paragraphContents.map((content, index) => (
+        paragraphContents?.map((content, index) => (
           <div key={index}>{index + 1}: {content}</div>
         ))
       )}
