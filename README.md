@@ -58,6 +58,11 @@ npm run build
 
 This should create a production bundle for your extension, ready to be zipped and published to the stores.
 
+# Loom Video
+```bash
+https://www.loom.com/share/9b0d2126f4b24cc59c45f6f6d29385ac
+```
+
 # Task 1: System Architecture Design with Specific Technologies
 
 **Answer:**
